@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="global.css">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap"
+        rel="stylesheet">
+    <!--Collegamento Tailwind.css-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/thx4jjd.css">
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        @theme {
+            --color-green: #0D5030;
+            --color-black: #202020;
+            --color-white: #F5F5F5;
+            --color-yellow: #FFB806;
+        --color-clifford: #da373d;
+      }
+      @layer base {
+        html {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /** 
+        Tailwind breakpoint
+        sm:640px 
+        md:768px
+        lg:1048px
+
+        Font size
+        Desktop -> h1:96pt h2:48pt action:32pt text=24pt
+        Mobile -> h1:48pt h2:32pt action:24pt text=12pt
+        */
+        @font-face {
+        font-family: bidan;
+        src: url("assets/font/Bidan.otf") format("opentype");
+        }
+        .text-light{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .text-medium{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .text-nav{
+            font-size: 1.5rem;
+            font-family: "bidan", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .text-normal{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.5rem;
+            line-height: 100%; /* 1.35rem */
+        }
+
+        .text-normal-medium{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 1.5rem;
+            line-height: 110%; /* 1.35rem */
+        }
+
+        .text-illustration{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.25rem;
+            line-height: 100%; 
+        }
+        .text-illustration-medium{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 2.25rem;
+            line-height: 100%; 
+        }
+
+        .text-title{
+            font-family: "Bidan", sans-serif;
+                font-size: 4rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+        }
+
+            .text-btn{
+                font-family: "Bidan", sans-serif;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+            }
+
+        .text-description{
+            font-size: 4rem;
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            line-height: 100%; /* 4rem */
+            font-style: normal;
+        }
+
+        .text-description-medium{
+            font-size: 4rem;
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            line-height: 100%; /* 4rem */
+            font-style: normal;
+        }
+   
+        @media screen and (max-width: 640px ){
+            .text-description{
+            font-size: 1.5rem;
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            line-height: 100%; /* 4rem */
+            font-style: normal;
+        }
+
+        .text-description-medium{
+            font-size: 1.5rem;
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            line-height: 100%; /* 4rem */
+            font-style: normal;
+        }
+        .text-nav{
+            font-size: 1.5rem;
+            font-family: "bidan", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .text-normal{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1rem;
+            line-height: 100%; /* 1.35rem */
+        }
+
+        .text-normal-medium{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 1rem;
+            line-height: 110%; /* 1.35rem */
+        }
+
+        .text-illustration{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.15rem;
+            line-height: 100%; 
+        }
+        .text-illustration-medium{
+            font-family: "neue-haas-grotesk-display", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 1.15rem;
+            line-height: 100%; 
+        }
+        .text-title{
+            font-family: "Bidan", sans-serif;
+                font-size: 4rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+        }
+
+            .text-btn{
+                font-family: "Bidan", sans-serif;
+                font-size: 1.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .gradient{
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+    }
+    .truncate-line {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+    </style>
+</head>
+
+<body class=" box-border w-full h-[200vh] relative bg-[#f5f5f5]">
+    <navbar
+        class="z-100 fixed bg-black h-screen w-[3rem] flex flex-col items-start justify-between py-[1.5rem] right-0 top-0">
+        <ul class="text-white text-nav flex flex-col items-start self-stretch gap-4 ">
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
+                style="writing-mode: sideways-lr;"><a href="#">chi siamo</a></li>
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
+                style="writing-mode: sideways-lr;"><a href="#">progetti</a></li>
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
+                style="writing-mode: sideways-lr;"><a href="#">stampa con noi</a></li>
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
+                style="writing-mode: sideways-lr;"><a href="#">contattaci</a></li>
+        </ul>
+        <ul class="w-full flex flex-col gap-2 justify-center items-center text-white">
+            <li><a href="#"><img src="assets/image/icon/instagram.svg"></a></li>
+            <li><a href="#"><img src="assets/image/icon/youtube.svg"></a></li>
+        </ul>
+    </navbar>
+    <main class="w-full flex flex-col gap-16 overflow-x-hidden">
+        <section class=" relative w-full h-screen flex justify-center items-center">
+            <a class="absolute" href="#"><img class="w-[65vw] md:w-[25vw] " src="assets/image/logo.svg"></a>
+            <div class="cover overflow-hidden relative w-full h-full [&_img]:mix-blend-multiply ">
+                <img id="drag1" src="assets/image/shape/Vector1.svg" class="w-[20vw] md:w-[6vw] absolute top-[50%] left-[0]">
+                <img id="drag2" src="assets/image/shape/Vector2.svg" class="w-[30vw] md:w-[10vw] absolute bottom-[5%] right-[5%]">
+                <img id="drag3" src="assets/image/shape/Vector4.svg"
+                    class="w-[30vw] md:w-[15vw] h-[30vw] md:h-[9vw] absolute top-[-5%] right-[1%]">
+                <img id="drag4" src="assets/image/shape/Vector3.svg" class="w-[30vw] md:w-[14vw] absolute bottom-[20%] right-[10%]">
+                <img id="drag5" src="assets/image/shape/Vector5.svg" class="w-[30vw] md:w-[11vw] absolute top-[30%] left-[15%] ">
+                <img id="drag6" src="assets/image/shape/Vector6.svg"
+                    class="w-[30vw] md:w-[12vw] h-[30vw] md:h-[12vw] absolute top-[50%] left-[20%] ">
+                <img id="drag7" src="assets/image/shape/Vector7.svg"
+                    class="w-[36vw] md:w-[6vw] h-[36vw] md:h-[12vw] absolute top-[-5%] right-[23%]">
+                <img id="drag8" src="assets/image/shape/Vector8.svg" class="w-[18vw] md:w-[8vw]  absolute top-[50%] left-[8%]">
+                <img id="drag9" src="assets/image/shape/Vector9.svg" class="w-[24vw] md:w-[6vw] absolute top-[5%] left-[30%]">
+                <img id="drag10" src="assets/image/shape/Vector10.svg"
+                    class="w-[64vw] md:w-[29vw] h-[64vw] md:h-[26vw] absolute bottom-[5%] left-[-3%]">
+                <img id="drag11" src="assets/image/shape/Vector11.svg"
+                    class=" w-[42vw] md:w-[25vw] h-[42vw] md:h-[22vw] absolute top-[-15%] left-[-3%]">
+
+                <img id="drag12" src="assets/image/shape/Vector12.svg"
+                    class="w-[70vw] md:w-[35vw] h-[70vw] md:h-[32vw] absolute top-[25%] right-[0%]">
+                <img id="drag12" src="assets/image/shape/Vector13.svg"
+                    class="w-[32vw] md:w-[24vw] h-[32vw] md:h-[19vw] absolute top-[12%] right-[12%]">
+                <img id="drag13" src="assets/image/shape/Vector14.svg"
+                    class="w-[24vw] md:w-[13vw] h-[24vw] md:h-[17vw] absolute top-[-5%] right-[10%]">
+                <img id="drag14" src="assets/image/shape/Vector15.svg"
+                    class="w-[8vw] md:w-[8vw] h-[8vw] md:h-[8vw] absolute top-[8%] right-[0%]">
+                <img id="drag15" src="assets/image/shape/Vector16.svg"
+                    class="w-[32vw] md:w-[24vw] h-[32vw] md:h-[14vw] absolute bottom-[-2%] right-[20%]">
+                <img id="drag16" src="assets/image/shape/Vector17.svg" class=" h-[12vw] md:h-[12vw] absolute top-[0] left-[0%]"
+                    alt="">
+                <img id="drag18" src="assets/image/shape/Vector19.svg"
+                    class="w-[27vw] md:w-[27vw] h-[22vw] md:h-[22vw] absolute bottom-[-1%] left-[14%]">
+                <img id="drag19" src="assets/image/shape/Vector20.svg" class="w-[26vw] md:w-[26vw] absolute bottom-[5%] right-[40%]"
+                    alt="">
+                <img id="drag20" src="assets/image/shape/Vector21.svg"
+                    class="w-[30vw] md:w-[25vw] h-[30vw] md:h-[13vw] absolute top-[35%] right-[10%]">
+                <img id="drag21" src="assets/image/shape/Vector22.svg"
+                    class="w-[40vw] md:w-[17vw] h-[30vw] md:h-[10vw] absolute top-[10%] left-[17%]">
+                <img id="drag22" src="assets/image/shape/Vector23.svg"
+                    class="w-[50vw] md:w-[18vw] h-[50vw] md:h-[18vw] absolute top-[0%] left-[50%] translate-y-[-50%] ">
+                <img id="drag23" src="assets/image/shape/Vector24.svg"
+                    class="w-[18vw] md:w-[9vw] h-[18vw] md:h-[9vw] absolute top-[30%] left-[0%]">
+                <img id="drag24" src="assets/image/shape/Vector24.svg"
+                    class="w-[18vw] md:w-[9vw] h-[18vw] md:h-[9vw] absolute top-[30%] left-[10%] md:left-[5%]">
+                <img id="drag25" src="assets/image/shape/Vector24.svg"
+                    class="w-[18vw] md:w-[9vw] h-[18vw] md:h-[9vw] absolute top-[30%] left-[20%] md:left-[10%]">
+            </div>
+            <img src="assets/image/shape/Vector18.svg"
+                class="mix-blend-multiply w-[18vw] h-[15vw] absolute bottom-[-12%] left-[5%]">
+            <img src="assets/image/shape/Vector21.svg"
+                class="mix-blend-multiply w-[23vw] h-[10vw] absolute bottom-[-10%] right-[5%] rotate-180">
+        </section>
+        <section class="px-[3rem] pr-[6rem] md:px-[7.5rem] flex flex-col gap-4">
+            <p class="text-description w-full hyphens-auto" lang="it"><span
+                    class="text-description-medium">Microstamperia</span> è un <span
+                    class="text-description-medium">laboratorio</span> condiviso che punta a insegnare, progettare ed
+                esplorare' le possibilità del <span class="text-description-medium">linguaggio grafico</span> e <span
+                    class="text-description-medium">scritto</span>.</p>
+            <a class="bg-[#F15165] md:w-fit flex justify-center px-[1rem] py-[1.5rem] text-btn text-white">vieni a
+                trovarci</a>
+        </section>
+        <section>
+            <div class="relative h-screen [&_img]:mix-blend-multiply [&_img]:absolute w-full ">
+                <img src="assets/image/risograph/manoDx.svg"
+                    class="right-0 bottom-0 h-[45vw] md:h-[30vw] object-contain">
+                <div
+                    class="absolute px-[3rem] pr-[6rem] md:px-[7.5rem] top-[50%] translate-y-[-50%] w-full flex justify-center items-center flex-col  gap-6">
+                    <img style="position: relative !important; " class="h-[65vw] md:h-[30vw]"
+                        src="assets/image/risograph/illustrazione.svg">
+                    <p class="text-illustration text-center ">Utilizziamo una tecnologia <span
+                            class="text-illustration-medium">risograph,</span><br> adatta per
+                        la micro-editoria e per l’ambiente.</p>
+                </div>
+                <img src="assets/image/risograph/manoSx.svg"
+                    class="left-0 top-[10%] md:top-0 h-[45vw] md:h-[30vw] object-contain">
+            </div>
+        </section>
+        <section>
+            <section class="section w-screen min-h-screen bg-[#00808D] mt-32">
+                <div
+                    class="[&_img]:rounded-lg [&_img]:object-cover relative [&_img]:absolute w-screen md:h-[35vw] h-[25vw] rounded-3xl">
+                    <img src="assets/image/stamperia1.jpg"
+                        class="w-[40vw] h-[40vw] z-2 top-[-50%] left-[-5%] rotate-[-12deg]">
+                    <img src="assets/image/stamperia2.jpg" class="h-[16vw] w-[16vw] left-[25%] rotate-[5deg] z-3">
+                    <img src="assets/image/stamperia3.jpg"
+                        class="w-[35vw] h-[30vw] left-[30%] top-[-30%] rotate-[10deg] z-2">
+                    <img src="assets/image/stamperia4.jpg"
+                        class="w-[50vw] h-[30vw] left-[60%] top-[-40%] rotate-[-5deg] z-3">
+                    <img src="assets/image/shape/Vector13.svg"
+                        class="mix-blend-multiply z-4 left-[35%] w-[18vw] top-[-20%] rotate-[-22deg] ">
+                    <img src="assets/image/shape/Vector11.svg"
+                        class="mix-blend-multiply z-4 right-[-10%] w-[35vw] object-cover top-[-20%] rotate-[-22deg] ">
+                    <img src="assets/image/shape/Vector24.svg"
+                        class="mix-blend-multiply z-4 left-[0%] w-[8vw] top-[-60%] rotate-[-22deg] ">
+                    <img src="assets/image/shape/Vector24.svg"
+                        class="mix-blend-multiply z-4 left-[8%] w-[8vw] top-[-62%] rotate-[-22deg] ">
+                    <img src="assets/image/shape/Vector24.svg"
+                        class="mix-blend-multiply z-4 left-[16%] w-[8vw] top-[-65%] rotate-[-22deg] ">
+                </div>
+                <div class="flex px-[3rem] pr-[6rem] md:px-[7.5rem] py-[4rem] flex-col md:flex-row">
+                    <div class="text-white flex flex-col gap-4 md:w-1/2">
+                        <h2 class="text-title ">Chi siamo</h2>
+                        <p class="text-normal"><span class="text-normal-medium">Micro Stamperia Quarticciolo</span> è un
+                            progetto che parte dalla carta stampata, dall’intreccio di
+                            diverse tecniche di stampa e dalla pratica artigianale, per sperimentare forme di
+                            apprendimento
+                            attivo. Il progetto si fonda sul <span class="text-normal-medium">laboratorio</span>, uno
+                            <span class="text-normal-medium">spazio di incontro</span> e scambio nell’ambito
+                            dell’<span class="text-normal-medium">autoproduzione editoriale</span>, necessario per
+                            svolgere attività manuali, con diverse tecniche
+                            di disegno, illustrazione, stampa e legatoria e per <span
+                                class="text-normal-medium">ospitare momenti</span> di formazione teorica e
+                            tecnica, come <span class="text-normal-medium">workshop, seminari, iniziative
+                                pubbliche.</span>
+                        </p>
+                        <p class="text-normal">Microstamperia è un progetto vincitore del bando VitaminaG nell’ambito
+                            del
+                            programma GenerAzioniGiovani.it finanziato dalle Politiche Giovanili della Regione Lazio con
+                            il
+                            sostegno del Dipartimento per la Gioventù</p>
+                    </div>
+                    <div class="flex justify-center items-center md:w-1/2 ">
+                        <div
+                            class="w-full md:w-auto mt-[3rem] md:mt-0 flex-col bg-white  px-[2rem] py-[1.5rem] rounded-xl md:rotate-[7deg]">
+                            <h3 class="text-normal-medium ">
+                                Con il sostegno di
+                            </h3>
+                            <img src="assets/image/sponsor/regioneLazio.png" class="w-full mb-[1.5rem]">
+                            <h3 class="text-normal-medium">
+                                nell'ambito di
+                            </h3>
+                            <img src="assets/image/sponsor/vitaminaG.png" class="w-full">
+                            <img src="assets/image/sponsor/periferia.png" class="w-full">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="" class="gallery bg-[#00808D] h-screen overflow-hidden">
+                <h2 class="text-title text-white text-center absolute top-[10%] left-[50%] translate-x-[-50%]">stampa
+                    con&nbspnoi</h2>
+                <ul
+                    class=" cards relative w-[12rem] md:w-[24rem] h-[18rem] left-[50%] top-[50%] md:top-[40%] translate-[-50%] [&_li]:w-[12rem] [&_li]:hover:cursor-pointer   md:[&_li]:w-[24rem] [&_li]:h-[18rem] [&_li]:absolute [&_li]:top-0 [&_li]:-left-0 [&_li]:text-center [&_li]:flex [&_li]:flex-col [&_li]:items-center [&_li]:rounded-lg ">
+                    <li><img src="assets/image/romanzoDelPratone1.png">
+                        <p class="text-normal text-white">Primo volume del Romanzo del Pratone, stampato in
+                            collaborazione con il quartiere di Torre Spaccata</p>
+                    </li>
+                    <li><img src="assets/image/romanzoDelPratone2.png">
+                        <p class="text-normal text-white">Secondo volume del Romanzo del Pratone, stampato in
+                            collaborazione con il quartiere di Torre Spaccata</p>
+
+                    </li>
+                    <li><img src="assets/image/storiePartigiane.png">
+                        <p class="text-normal text-white">Raccolta di storie partigiane raccolte dagli abitanti del
+                            Quarticciolo</p>
+                    </li>
+                    <li><img src="assets/image/fanzine.png">
+                        <p class="text-normal text-white">Fanzine riguardo la città, realizzato tramite la risograph</p>
+                    </li>
+                    <li><img src="assets/image/logicaFerocia.png">
+                        <p class="text-normal text-white">Brochure realizzata in prossimazione della discussione offerta
+                            dalla fondazione Michelle</p>
+                    </li>
+                </ul>
+            </div>
+            <section class="bg-[#00808D] w-full h-[30vh]"></section>
+            <section class="relative h-screen  mt-0 pt-0 ">
+                <div
+                    class="z-1 absolute top-[-30%] w-[120%] left-[50%] translate-x-[-50%]  h-[30rem] rounded-[100%] bg-white">
+                </div>
+                <img src="assets/image/shape/Vector18.svg"
+                    class="z-2 mix-blend-multiply w-[12rem] h-[15rem] absolute top-[-5%] left-[5%]">
+                <img src="assets/image/shape/Vector21.svg"
+                    class="z-2 mix-blend-multiply w-[23rem] h-[10rem] absolute top-[5%] right-[5%] rotate-180">
+                <img src="assets/image/shape/Vector5.svg"
+                    class="z-2 mix-blend-multiply w-[16rem] h-[16rem] absolute top-[-30%] left-[20%]">
+                <img src="assets/image/shape/Vector14.svg"
+                    class="z-2 mix-blend-multiply w-[16rem] absolute top-[-25%] right-[20%]">
+                <h2 class="absolute left-[50%] translate-[-50%] text-title text-black text-center z-2">Progetti</h2>
+                <div class="flex flex-col gap-4 px-[3rem] md:px-[7.5rem] mt-[10rem]">
+                    <div class="mt-[30vh] w-full px-[7.5rem] bg-red-500">
+                        sadas
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf.min.mjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollSmoother requires ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

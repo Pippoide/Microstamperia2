@@ -1,0 +1,23 @@
+<svg width="136" height="145" viewBox="0 0 136 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector" style="mix-blend-mode:multiply" filter="url(#filter0_n_1_109)">
+<path d="M3.08421 136.42L28.4783 91.7922C29.8621 89.3605 29.0959 86.3048 26.7155 84.7689L3.0267 69.4265C-1.49529 66.4988 0.637994 59.6435 6.07427 59.6435H26.9956C29.3431 59.6435 31.4353 58.1956 32.1931 56.0358L50.3799 4.51295C52.0685 -0.270578 59.0202 -0.302532 60.7582 4.45699L76.6717 48.0206C77.4707 50.2044 79.6287 51.6442 82.0174 51.5722L130.211 50.1564C135.375 50.0045 137.879 56.2198 133.992 59.5155L85.5839 100.463C83.5742 102.159 83.1128 105.015 84.4801 107.239L100.962 133.924C104.191 139.148 97.3459 144.699 92.6262 140.691L57.0516 110.462C54.976 108.703 51.8871 108.703 49.8115 110.462L11.4939 143.019C6.86486 146.955 0.0860013 141.651 3.05948 136.42H3.08421Z" fill="#734898"/>
+</g>
+<defs>
+<filter id="filter0_n_1_109" x="0.570374" y="0.90625" width="135.317" height="143.479" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.66666668653488159 0.66666668653488159" stitchTiles="stitch" numOctaves="3" result="noise" seed="3236" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.5)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_1_109">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+</defs>
+</svg>
