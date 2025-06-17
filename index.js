@@ -16,6 +16,7 @@ function stabilizeImages() {
 
 // Esegui quando tutto è caricato
 window.addEventListener("load", stabilizeImages);
+
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
 for (let i = 1; i <= 25; i++) {
@@ -39,11 +40,78 @@ Draggable.create("#stampa", {
     inertia: true,
     onDrag: function () {
         const xPosition = this.x;
-        const yPosition = this.y;
+
     }
 });
 
 
+
+let slider = document.getElementById("slider")
+let drag
+let startX
+let  maxTranslate = ((document.querySelectorAll('.book').length) * document.querySelector('.book').offsetWidth) - window.innerWidth;
+maxTranslate=-1*maxTranslate
+let prevTranslate = getTranslateX(slider)
+
+slider.addEventListener('mousedown', (e) => {
+    drag = true;
+    startX = e.clientX
+    prevTranslate = getTranslateX(slider) || 0;
+
+});
+let movimento = 0
+
+slider.addEventListener('mousemove', (e) => {
+    if (!drag) return;
+    const x = getTranslateX(slider);
+    delta = e.clientX - startX;
+    currentTranslate = prevTranslate + delta;
+    console.log(currentTranslate)
+    console.log(maxTranslate)
+    if (currentTranslate > 0) currentTranslate = 0;
+    if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+    slider.style.transform = "translateX(" + currentTranslate + "px)";
+});
+
+slider.addEventListener('mouseup', (e) => {
+    drag = false
+})
+slider.addEventListener('mouseleave', (e) => {
+    drag = false
+})
+
+function getTranslateX(element) {
+    const style = window.getComputedStyle(element);
+    const matrix = new DOMMatrix(style.transform);
+    return matrix.m41; // valore di translateX
+}
+
+slider.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  prevTranslate = getTranslateX(slider) || 0;
+}, { passive: true });
+
+// Touch move
+slider.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+
+  const delta = e.touches[0].clientX - startX;
+  currentTranslate = prevTranslate + delta;
+
+  // limiti
+  if (currentTranslate > 0) currentTranslate = 0;
+  if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+
+  slider.style.transform = "translateX(" + currentTranslate + "px)";
+}, { passive: true });
+
+// Touch end
+slider.addEventListener('touchend', () => {
+  isDragging = false;
+});
+
+/*
 gsap.registerPlugin(ScrollTrigger);
 
 let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
@@ -97,7 +165,7 @@ function calculateVisibleItems(length) {
     /*if(length>7)
       return 2;
     if(length<5)
-      return 2;*/
+      return 2;
     return 3; //return 1 ovvero il numero di libri visibili
 }
 
@@ -147,3 +215,4 @@ function buildEffect(items, spacing) {
 //lg >= 1024
 //xl>=1280px
 
+*/
