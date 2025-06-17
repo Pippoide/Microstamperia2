@@ -1,3 +1,21 @@
+function stabilizeImages() {
+    const images = document.querySelectorAll("img");
+
+    images.forEach(img => {
+        // Salta immagini SVG inline o immagini non ancora caricate
+        if (!img.complete || img.naturalWidth === 0 || img.src.endsWith(".svg")) return;
+
+        // Imposta width e height se non presenti
+        if (!img.hasAttribute("width")) img.setAttribute("width", img.naturalWidth);
+        if (!img.hasAttribute("height")) img.setAttribute("height", img.naturalHeight);
+
+        // Aggiunge lazy loading se non specificato
+        if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
+    });
+}
+
+// Esegui quando tutto è caricato
+window.addEventListener("load", stabilizeImages);
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
 for (let i = 1; i <= 25; i++) {
