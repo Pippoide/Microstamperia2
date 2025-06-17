@@ -456,7 +456,7 @@ function buildEffect(items, spacing) {
         i, index, item;
 
     // set initial state of items
-    gsap.set(items, { xPercent: 300, opacity: 0, scale: 0 });
+    gsap.set(items, { xPercent: 200, opacity: 0, scale: 0 });
     //total items should be double of length--it will start on 1st item of second instance of list
     //there should be extra cards visible on end of 2nd instance of list to make it look like it is in loop
     for (i = 0; i < (items.length * 2 + cardsVisible); i++) {
