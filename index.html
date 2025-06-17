@@ -26,6 +26,7 @@
             --color-yellow: #FFB806;
         --color-clifford: #da373d;
       }
+
       @layer base {
         html {
             font-family: 'Roboto', sans-serif;
@@ -200,7 +201,7 @@
                 text-transform: uppercase;
             }
         }
-    }
+      }
 
     .gradient{
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
@@ -210,6 +211,9 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+}
+*{
+    transition: all ease-out 300;
 }
     </style>
 </head>
@@ -234,20 +238,27 @@
     </navbar>
     <main class="w-full flex flex-col gap-16 overflow-x-hidden">
         <section class=" relative w-full h-screen flex justify-center items-center">
-            <a class="absolute" href="#"><img class="w-[65vw] md:w-[25vw] " src="assets/image/logo.svg"></a>
+            <a class="absolute" href="#"><img class="w-[65vw] lg:w-[25vw] " src="assets/image/logo.svg"></a>
             <div class="cover overflow-hidden relative w-full h-full [&_img]:mix-blend-multiply ">
-                <img id="drag1" src="assets/image/shape/Vector1.svg" class="w-[20vw] md:w-[6vw] absolute top-[50%] left-[0]">
-                <img id="drag2" src="assets/image/shape/Vector2.svg" class="w-[30vw] md:w-[10vw] absolute bottom-[5%] right-[5%]">
+                <!-- il primo W senza il mobile mentre dopo 768px (md) si vede il desktop-->
+                <img id="drag1" src="assets/image/shape/Vector1.svg"
+                    class="w-[50vw] md:w-[20vw] absolute top-[50%] left-[0]">
+                <img id="drag2" src="assets/image/shape/Vector2.svg"
+                    class="w-[30vw] md:w-[10vw] absolute bottom-[5%] right-[5%]">
                 <img id="drag3" src="assets/image/shape/Vector4.svg"
                     class="w-[30vw] md:w-[15vw] h-[30vw] md:h-[9vw] absolute top-[-5%] right-[1%]">
-                <img id="drag4" src="assets/image/shape/Vector3.svg" class="w-[30vw] md:w-[14vw] absolute bottom-[20%] right-[10%]">
-                <img id="drag5" src="assets/image/shape/Vector5.svg" class="w-[30vw] md:w-[11vw] absolute top-[30%] left-[15%] ">
+                <img id="drag4" src="assets/image/shape/Vector3.svg"
+                    class="w-[30vw] md:w-[14vw] absolute bottom-[20%] right-[10%]">
+                <img id="drag5" src="assets/image/shape/Vector5.svg"
+                    class="w-[30vw] md:w-[11vw] absolute top-[30%] left-[15%] ">
                 <img id="drag6" src="assets/image/shape/Vector6.svg"
                     class="w-[30vw] md:w-[12vw] h-[30vw] md:h-[12vw] absolute top-[50%] left-[20%] ">
                 <img id="drag7" src="assets/image/shape/Vector7.svg"
                     class="w-[36vw] md:w-[6vw] h-[36vw] md:h-[12vw] absolute top-[-5%] right-[23%]">
-                <img id="drag8" src="assets/image/shape/Vector8.svg" class="w-[18vw] md:w-[8vw]  absolute top-[50%] left-[8%]">
-                <img id="drag9" src="assets/image/shape/Vector9.svg" class="w-[24vw] md:w-[6vw] absolute top-[5%] left-[30%]">
+                <img id="drag8" src="assets/image/shape/Vector8.svg"
+                    class="w-[18vw] md:w-[8vw]  absolute top-[50%] left-[8%]">
+                <img id="drag9" src="assets/image/shape/Vector9.svg"
+                    class="w-[24vw] md:w-[6vw] absolute top-[5%] left-[30%]">
                 <img id="drag10" src="assets/image/shape/Vector10.svg"
                     class="w-[64vw] md:w-[29vw] h-[64vw] md:h-[26vw] absolute bottom-[5%] left-[-3%]">
                 <img id="drag11" src="assets/image/shape/Vector11.svg"
@@ -263,12 +274,12 @@
                     class="w-[8vw] md:w-[8vw] h-[8vw] md:h-[8vw] absolute top-[8%] right-[0%]">
                 <img id="drag15" src="assets/image/shape/Vector16.svg"
                     class="w-[32vw] md:w-[24vw] h-[32vw] md:h-[14vw] absolute bottom-[-2%] right-[20%]">
-                <img id="drag16" src="assets/image/shape/Vector17.svg" class=" h-[12vw] md:h-[12vw] absolute top-[0] left-[0%]"
-                    alt="">
+                <img id="drag16" src="assets/image/shape/Vector17.svg"
+                    class=" h-[12vw] md:h-[12vw] absolute top-[0] left-[0%]" alt="">
                 <img id="drag18" src="assets/image/shape/Vector19.svg"
                     class="w-[27vw] md:w-[27vw] h-[22vw] md:h-[22vw] absolute bottom-[-1%] left-[14%]">
-                <img id="drag19" src="assets/image/shape/Vector20.svg" class="w-[26vw] md:w-[26vw] absolute bottom-[5%] right-[40%]"
-                    alt="">
+                <img id="drag19" src="assets/image/shape/Vector20.svg"
+                    class="w-[26vw] md:w-[26vw] absolute bottom-[5%] right-[40%]" alt="">
                 <img id="drag20" src="assets/image/shape/Vector21.svg"
                     class="w-[30vw] md:w-[25vw] h-[30vw] md:h-[13vw] absolute top-[35%] right-[10%]">
                 <img id="drag21" src="assets/image/shape/Vector22.svg"
@@ -401,20 +412,24 @@
                 </ul>
             </div>
             <section class="bg-[#00808D] w-full h-[30vh]"></section>
-            <section class="relative h-screen  mt-0 pt-0 ">
-                <div
-                    class="z-1 absolute top-[-30%] w-[120%] left-[50%] translate-x-[-50%]  h-[30rem] rounded-[100%] bg-white">
+            <section class=" h-screen  mt-0 pt-0 ">
+                <div class="relative w-full h-[30vh] bg-red-500 bg-[url('assets/image/wave/wave.png')] bg-cover bg-top bg-no-repeat">
+                    <img src="assets/image/shape/Vector18.svg"
+                        class="z-2 mix-blend-multiply lg:w-[12rem] md:w-[10rem] w-[6rem] absolute lg:top-[60%] lg:left-[15%] md:left-[5%] md:top-[30%] rotate-[-60deg]">
+                    <img src="assets/image/shape/Vector21.svg"
+                        class="z-2 mix-blend-multiply lg:w-[24rem] md:w-[16rem] w-[10rem] absolute top-[-15%] left-[5%] rotate-[-30deg]">
+                    <img src="assets/image/shape/Vector5.svg"
+                        class="z-2 mix-blend-multiply  lg:w-[15rem] md:w-[10rem] w-[6rem] absolute top-[-5%] right-[10%]">
+                    <img src="assets/image/shape/Vector14.svg"
+                        class="z-2 mix-blend-multiply lg:w-[15rem] md:w-[8rem] w-[6rem] absolute top-[-25%] right-[10%]">
+                        <div class="flex flex-col absolute left-[50%] top-[50%] translate-[-50%] text-center gap-3">
+                            <h2 class="text-title text-black text-center z-2">Progetti</h2>
+                            <p class="text-normal">Le edizioni, i laboratori e le attività della Microstamperia</p>
+                        </div>
                 </div>
-                <img src="assets/image/shape/Vector18.svg"
-                    class="z-2 mix-blend-multiply w-[12rem] h-[15rem] absolute top-[-5%] left-[5%]">
-                <img src="assets/image/shape/Vector21.svg"
-                    class="z-2 mix-blend-multiply w-[23rem] h-[10rem] absolute top-[5%] right-[5%] rotate-180">
-                <img src="assets/image/shape/Vector5.svg"
-                    class="z-2 mix-blend-multiply w-[16rem] h-[16rem] absolute top-[-30%] left-[20%]">
-                <img src="assets/image/shape/Vector14.svg"
-                    class="z-2 mix-blend-multiply w-[16rem] absolute top-[-25%] right-[20%]">
-                <h2 class="absolute left-[50%] translate-[-50%] text-title text-black text-center z-2">Progetti</h2>
-                <div class="flex flex-col gap-4 px-[3rem] md:px-[7.5rem] mt-[10rem]">
+
+                
+                <div class="flex flex-col gap-4 px-[3rem] md:px-[7.5rem] ">
                     <div class="mt-[30vh] w-full px-[7.5rem] bg-red-500">
                         sadas
                     </div>
