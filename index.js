@@ -45,6 +45,7 @@ const spacing = 0.1,    // spacing of the cards (stagger)
         start: 'top top',
         end: () => '+=3000',
         pin: ".gallery",
+        anticipatePin: 1,
         onUpdate(self) {
             if (self.progress < 1 || self.progress > 0) {
                 scrub.vars.totalTime = snap(
