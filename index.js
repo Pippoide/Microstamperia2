@@ -1,3 +1,22 @@
+function stabilizeImages() {
+    const images = document.querySelectorAll("img");
+
+    images.forEach(img => {
+        // Salta immagini SVG inline o immagini non ancora caricate
+        if (!img.complete || img.naturalWidth === 0 || img.src.endsWith(".svg")) return;
+
+        // Imposta width e height se non presenti
+        if (!img.hasAttribute("width")) img.setAttribute("width", img.naturalWidth);
+        if (!img.hasAttribute("height")) img.setAttribute("height", img.naturalHeight);
+
+        // Aggiunge lazy loading se non specificato
+        if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
+    });
+}
+
+// Esegui quando tutto è caricato
+window.addEventListener("load", stabilizeImages);
+
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
 for (let i = 1; i <= 25; i++) {
@@ -21,8 +40,75 @@ Draggable.create("#stampa", {
     inertia: true,
     onDrag: function () {
         const xPosition = this.x;
-        const yPosition = this.y;
+
     }
+});
+
+
+
+let slider = document.getElementById("slider")
+let drag
+let startX
+let  maxTranslate = ((document.querySelectorAll('.book').length) * document.querySelector('.book').offsetWidth) - window.innerWidth;
+maxTranslate=-1*maxTranslate
+let prevTranslate = getTranslateX(slider)
+
+slider.addEventListener('mousedown', (e) => {
+    drag = true;
+    startX = e.clientX
+    prevTranslate = getTranslateX(slider) || 0;
+
+});
+let movimento = 0
+
+slider.addEventListener('mousemove', (e) => {
+    if (!drag) return;
+    const x = getTranslateX(slider);
+    delta = e.clientX - startX;
+    currentTranslate = prevTranslate + delta;
+    console.log(currentTranslate)
+    console.log(maxTranslate)
+    if (currentTranslate > 0) currentTranslate = 0;
+    if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+    slider.style.transform = "translateX(" + currentTranslate + "px)";
+});
+
+slider.addEventListener('mouseup', (e) => {
+    drag = false
+})
+slider.addEventListener('mouseleave', (e) => {
+    drag = false
+})
+
+function getTranslateX(element) {
+    const style = window.getComputedStyle(element);
+    const matrix = new DOMMatrix(style.transform);
+    return matrix.m41; // valore di translateX
+}
+
+slider.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  prevTranslate = getTranslateX(slider) || 0;
+}, { passive: true });
+
+// Touch move
+slider.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+
+  const delta = e.touches[0].clientX - startX;
+  currentTranslate = prevTranslate + delta;
+
+  // limiti
+  if (currentTranslate > 0) currentTranslate = 0;
+  if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+
+  slider.style.transform = "translateX(" + currentTranslate + "px)";
+}, { passive: true });
+
+// Touch end
+slider.addEventListener('touchend', () => {
+  isDragging = false;
 });
 
 /*
