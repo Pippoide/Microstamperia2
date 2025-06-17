@@ -369,6 +369,19 @@ Draggable.create("#drag26", {
 });
 
 
+
+
+Draggable.create("#stampa", {
+    type: "x,y",
+    bounds: ".risograph",
+    inertia: true,
+    onDrag: function () {
+        const xPosition = this.x;
+        const yPosition = this.y;
+    }
+});
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.

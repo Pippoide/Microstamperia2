@@ -114,6 +114,15 @@
                 text-transform: uppercase;
             }
 
+            .text-title-card{
+                font-family: "Bidan", sans-serif;
+                font-size: 2.5rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+            }
+
         .text-description{
             font-size: 4rem;
             font-family: "neue-haas-grotesk-display", sans-serif;
@@ -129,7 +138,17 @@
             line-height: 100%; /* 4rem */
             font-style: normal;
         }
-   
+           @media screen and (max-width: 1024px ){
+            .text-title-card{
+                font-family: "Bidan", sans-serif;
+                font-size: 2rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+            }
+           }
+
         @media screen and (max-width: 640px ){
             .text-description{
             font-size: 1.5rem;
@@ -200,6 +219,14 @@
                 line-height: 90%; /* 1.35rem */
                 text-transform: uppercase;
             }
+                 .text-title-card{
+                font-family: "Bidan", sans-serif;
+                font-size: 2rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 90%; /* 1.35rem */
+                text-transform: uppercase;
+            }
         }
       }
 
@@ -213,8 +240,25 @@
         text-overflow: ellipsis;
 }
 .transition{
-    transition: all 300ms ease-out; 
+    transition: all 300ms ease-in; 
 }
+
+.animation-hand{
+    animation: hand-dx 3s  ease-in-out infinite
+}
+
+@keyframes hand-dx {
+    0%{
+        rotate:0deg
+    }
+    50%{
+        rotate:15deg
+    }
+    100%{
+        rotate:0deg
+    }
+}
+
     </style>
 </head>
 
@@ -299,28 +343,40 @@
                 class="mix-blend-multiply w-[23vw] h-[10vw] absolute bottom-[-10%] right-[5%] rotate-180">
         </section>
         <section class="px-[3rem] pr-[6rem] md:px-[7.5rem] flex flex-col gap-4">
-            <p class="text-description w-full hyphens-auto" lang="it"><span
-                    class="text-description-medium">Microstamperia</span> è un <span
-                    class="text-description-medium">laboratorio</span> condiviso che punta a insegnare, progettare ed
+            <p class="text-description w-full" lang="it"><span class="text-description-medium">Microstamperia</span> è
+                un <span class="text-description-medium">laboratorio</span> condiviso che punta a insegnare, progettare
+                ed
                 esplorare' le possibilità del <span class="text-description-medium">linguaggio grafico</span> e <span
                     class="text-description-medium">scritto</span>.</p>
-            <a class="bg-[#F15165] md:w-fit flex justify-center px-[1rem] py-[1.5rem] text-btn text-white">vieni a
+            <a class="bg-[#F15165] w-fit flex justify-center px-[1rem] py-[1.5rem] text-btn text-white">vieni a
                 trovarci</a>
         </section>
-        <section>
-            <div class="relative h-screen [&_img]:mix-blend-multiply [&_img]:absolute w-full ">
+        <section class="mb-[15vh] ">
+            <div class="risograph relative min-h-screen [&_img]:mix-blend-multiply [&_img]:absolute w-full ">
                 <img src="assets/image/risograph/manoDx.svg"
-                    class="right-0 bottom-0 h-[45vw] md:h-[30vw] object-contain">
+                    class="right-[-15vw] z-2 animation-hand pointer-events-none bottom-0 h-[45vw] sm:h-[30vw] object-contain origin-bottom-right rotate-[-30deg]">
                 <div
                     class="absolute px-[3rem] pr-[6rem] md:px-[7.5rem] top-[50%] translate-y-[-50%] w-full flex justify-center items-center flex-col  gap-6">
-                    <img style="position: relative !important; " class="h-[65vw] md:h-[30vw]"
-                        src="assets/image/risograph/illustrazione.svg">
+
+                    <div class="relative">
+                        <img style="position: relative !important; "
+                            class="h-[65vw] sm:h-[30vw] z-2 pointer-events-none"
+                            src="assets/image/risograph/illustrazione.svg">
+                        <div
+                            class="w-full h-full absolute top-[50%] left-[50%] translate-[-50%] flex justify-center items-center ">
+                            <img id="stampa" class="z-1 h-[30vw] sm:h-[15vw] " src="assets/image/risograph/stampa.svg">
+                        </div>
+                    </div>
+
                     <p class="text-illustration text-center ">Utilizziamo una tecnologia <span
                             class="text-illustration-medium">risograph,</span><br> adatta per
                         la micro-editoria e per l’ambiente.</p>
                 </div>
+                <!--<img style="position: relative !important; " class="h-[65vw] md:h-[30vw]"
+                        src="assets/image/risograph/illustrazione.svg">
+            -->
                 <img src="assets/image/risograph/manoSx.svg"
-                    class="left-0 top-[10%] md:top-0 h-[45vw] md:h-[30vw] object-contain">
+                    class="left-[-10vw] top-[10%] z-2 pointer-events-none md:top-0 h-[45vw] animation-hand sm:h-[30vw] origin-bottom-left object-contain">
             </div>
         </section>
         <section>
@@ -345,7 +401,8 @@
                     <img src="assets/image/shape/Vector24.svg"
                         class="mix-blend-multiply z-4 left-[16%] w-[8vw] top-[-65%] rotate-[-22deg] ">
                 </div>
-                <div class="flex px-[3rem] pr-[6rem] md:px-[7.5rem] py-[4rem] flex-col lg:flex-row md:items-end lg:gap-12 md:gap-16">
+                <div
+                    class="flex px-[3rem] pr-[6rem] md:px-[7.5rem] py-[4rem] flex-col lg:flex-row md:items-end lg:gap-12 md:gap-16">
                     <div class="text-white flex flex-col gap-4 lg:w-1/2">
                         <h2 class="text-title ">Chi siamo</h2>
                         <p class="text-normal"><span class="text-normal-medium">Micro Stamperia Quarticciolo</span> è un
@@ -411,9 +468,10 @@
                     </li>
                 </ul>
             </div>
-           
-            <section class=" h-screen  mt-0 pt-0 ">
-                <div class="bg-[#00808D] relative w-full h-[30vh] bg-red-500 bg-[url('assets/image/wave/wave.png')] bg-cover bg-top bg-no-repeat">
+
+            <section class=" h-screen  mt-0 pt-0 pl-[3rem] pr-[6rem] md:px-[7.5rem] relative ">
+                <div
+                    class="bg-[#00808D] absolute w-full md:h-[30vh] h-[25vh] bg-[url('assets/image/wave/wave.png')] bg-cover top-[0%] left-[50%] translate-x-[-50%] bg-top bg-no-repeat">
                     <img src="assets/image/shape/Vector18.svg"
                         class="z-2 mix-blend-multiply lg:w-[12rem] md:w-[10rem] w-[6rem] absolute lg:top-[60%] lg:left-[15%] md:left-[5%] md:top-[30%] rotate-[-60deg]">
                     <img src="assets/image/shape/Vector21.svg"
@@ -422,18 +480,77 @@
                         class="z-2 mix-blend-multiply  lg:w-[8rem] md:w-[8rem] w-[5rem] absolute lg:top-[45%]  md:right-[5%] md:top-[25%] sm:top-[-25%]  sm:right-[10%] right-[25%] top-[-10%]">
                     <img src="assets/image/shape/Vector14.svg"
                         class="z-2 mix-blend-multiply lg:right-[18%] lg:w-[10rem] md:w-[8rem] w-[5rem] absolute top-[-15%] right-[15%] rotate-[-60deg]">
-                        <div class="flex flex-col absolute left-[50%] top-[50%] translate-[-50%] w-full text-center gap-3 pr-[6rem] pl-[3rem]">
-                            <h2 class="text-title text-black text-center z-2 ">Progetti</h2>
-                            <p class="text-normal">Le edizioni, i laboratori e le attività della Microstamperia</p>
-                        </div>
-                </div>
-
-                
-                <div class="flex flex-col gap-4 pl-[3rem] pr-[6rem] md:px-[7.5rem] ">
-                    <div class="mt-[30vh] w-full px-[7.5rem] bg-red-500">
-                        sadas
+                    <div
+                        class="flex flex-col absolute left-[50%] top-[50%] translate-[-50%] w-full text-center gap-3 pr-[6rem] pl-[3rem]">
+                        <h2 class="text-title text-black text-center z-2 ">Progetti</h2>
+                        <p class="text-normal">Le edizioni, i laboratori e le attività della Microstamperia</p>
                     </div>
                 </div>
+
+         
+                    <div class=" w-full grid md:grid-cols-3 md:gap-4 md:gap-y-16 gap-y-8 pt-[40vh] ">
+                        <div class="flex flex-col gap-2 w-full">
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-4 py-2 bg-[#48B975] text-center rounded-md text-normal">Libri</span>
+                                <span class="px-4 py-2 bg-[#EE3A81] text-center rounded-md text-normal">Progetti</span>
+                                <span class="px-4 py-2 bg-[#F4CC4D] text-center rounded-md text-normal">Edizioni</span>
+                            </div>
+                            <img src="assets/image/gallery/cieloStampato.jpg"
+                                class="h-[30vh] mt-2 rounded-xl object-cover">
+                            <h1 class="text-title-card">Cielo Stampato</h1>
+                            <p class="text-normal">Il libro “Cielo Stampato” è il primo materiale editoriale prodotto
+                                dalla Microstamperia Quarticciolo. Nasce con l’idea di inaugurare una collana…</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-4 py-2 bg-[#48B975] text-center rounded-md text-normal">Libri</span>
+                                <span class="px-4 py-2 bg-[#EE3A81] text-center rounded-md text-normal">Progetti</span>
+                                <span class="px-4 py-2 bg-[#F4CC4D] text-center rounded-md text-normal">Edizioni</span>
+                            </div>
+                            <img src="assets/image/gallery/cieloLaboratorio.jpg"
+                                class="h-[30vh] mt-2 rounded-xl object-cover">
+                            <h1 class="text-title-card">Cielo - Laboratorio</h1>
+                            <p class="text-normal">Il libro “Cielo Stampato” è il primo materiale editoriale prodotto
+                                dalla Microstamperia Quarticciolo. Nasce con l’idea di inaugurare una collana…</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-4 py-2 bg-[#48B975] text-center rounded-md text-normal">Libri</span>
+                                <span class="px-4 py-2 bg-[#EE3A81] text-center rounded-md text-normal">Progetti</span>
+                                <span class="px-4 py-2 bg-[#F4CC4D] text-center rounded-md text-normal">Edizioni</span>
+                            </div>
+                            <img src="assets/image/gallery/calendario.jpg"
+                                class="h-[30vh] mt-2 rounded-xl object-cover">
+                            <h1 class="text-title-card">Calendario - 2024</h1>
+                            <p class="text-normal">Il libro “Cielo Stampato” è il primo materiale editoriale prodotto
+                                dalla Microstamperia Quarticciolo. Nasce con l’idea di inaugurare una collana…</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-2 flex-wrap">
+                                <span
+                                    class="px-4 py-2 bg-[#00808D] text-center rounded-md text-normal">Laboratorio</span>
+                                <span class="px-4 py-2 bg-[#EE3A81] text-center rounded-md text-normal">Progetti</span>
+                            </div>
+                            <img src="assets/image/gallery/mareStampato.jpg"
+                                class="h-[30vh] mt-2 rounded-xl object-cover">
+                            <h1 class="text-title-card">Mare Stampato</h1>
+                            <p class="text-normal">Il libro “Cielo Stampato” è il primo materiale editoriale prodotto
+                                dalla Microstamperia Quarticciolo. Nasce con l’idea di inaugurare una collana…</p>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-2 flex-wrap">
+                                <span
+                                    class="px-4 py-2 bg-[#00808D] text-center rounded-md text-normal">Laboratorio</span>
+                                <span class="px-4 py-2 bg-[#EE3A81] text-center rounded-md text-normal">Progetti</span>
+                            </div>
+                            <img src="assets/image/gallery/cianotipia.jpg"
+                                class="h-[30vh] mt-2 rounded-xl object-cover">
+                            <h1 class="text-title-card">cianotipia</h1>
+                            <p class="text-normal">Il libro “Cielo Stampato” è il primo materiale editoriale prodotto
+                                dalla Microstamperia Quarticciolo. Nasce con l’idea di inaugurare una collana…</p>
+                        </div>
+                    </div>
+                
             </section>
         </section>
 
