@@ -185,7 +185,7 @@
         }
         .text-title{
             font-family: "Bidan", sans-serif;
-                font-size: 4rem;
+                font-size: 3rem;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 90%; /* 1.35rem */
@@ -212,8 +212,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
 }
-*{
-    transition: all ease-out 300;
+.transition{
+    transition: all 300ms ease-out; 
 }
     </style>
 </head>
@@ -221,7 +221,7 @@
 <body class=" box-border w-full h-[200vh] relative bg-[#f5f5f5]">
     <navbar
         class="z-100 fixed bg-black h-screen w-[3rem] flex flex-col items-start justify-between py-[1.5rem] right-0 top-0">
-        <ul class="text-white text-nav flex flex-col items-start self-stretch gap-4 ">
+        <ul class="text-white text-nav flex flex-col items-start sel-stretch fgap-4  transition">
             <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
                 style="writing-mode: sideways-lr;"><a href="#">chi siamo</a></li>
             <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
@@ -345,8 +345,8 @@
                     <img src="assets/image/shape/Vector24.svg"
                         class="mix-blend-multiply z-4 left-[16%] w-[8vw] top-[-65%] rotate-[-22deg] ">
                 </div>
-                <div class="flex px-[3rem] pr-[6rem] md:px-[7.5rem] py-[4rem] flex-col md:flex-row">
-                    <div class="text-white flex flex-col gap-4 md:w-1/2">
+                <div class="flex px-[3rem] pr-[6rem] md:px-[7.5rem] py-[4rem] flex-col lg:flex-row md:items-end lg:gap-12 md:gap-16">
+                    <div class="text-white flex flex-col gap-4 lg:w-1/2">
                         <h2 class="text-title ">Chi siamo</h2>
                         <p class="text-normal"><span class="text-normal-medium">Micro Stamperia Quarticciolo</span> è un
                             progetto che parte dalla carta stampata, dall’intreccio di
@@ -384,8 +384,8 @@
                     </div>
                 </div>
             </section>
-            <div id="" class="gallery bg-[#00808D] h-screen overflow-hidden">
-                <h2 class="text-title text-white text-center absolute top-[10%] left-[50%] translate-x-[-50%]">stampa
+            <div id="" class="gallery bg-[#00808D] h-screen overflow-hidden  pl-[3rem] pr-[6rem] relative">
+                <h2 class="text-title text-white text-center absolute w-full  top-[10%] left-[-3rem] pl-[3rem]">stampa
                     con&nbspnoi</h2>
                 <ul
                     class=" cards relative w-[12rem] md:w-[24rem] h-[18rem] left-[50%] top-[50%] md:top-[40%] translate-[-50%] [&_li]:w-[12rem] [&_li]:hover:cursor-pointer   md:[&_li]:w-[24rem] [&_li]:h-[18rem] [&_li]:absolute [&_li]:top-0 [&_li]:-left-0 [&_li]:text-center [&_li]:flex [&_li]:flex-col [&_li]:items-center [&_li]:rounded-lg ">
@@ -413,23 +413,23 @@
             </div>
             <section class="bg-[#00808D] w-full h-[30vh]"></section>
             <section class=" h-screen  mt-0 pt-0 ">
-                <div class="relative w-full h-[30vh] bg-red-500 bg-[url('assets/image/wave/wave.png')] bg-cover bg-top bg-no-repeat">
+                <div class="bg-[#00808D] relative w-full h-[30vh] bg-red-500 bg-[url('assets/image/wave/wave.png')] bg-cover bg-top bg-no-repeat">
                     <img src="assets/image/shape/Vector18.svg"
                         class="z-2 mix-blend-multiply lg:w-[12rem] md:w-[10rem] w-[6rem] absolute lg:top-[60%] lg:left-[15%] md:left-[5%] md:top-[30%] rotate-[-60deg]">
                     <img src="assets/image/shape/Vector21.svg"
                         class="z-2 mix-blend-multiply lg:w-[24rem] md:w-[16rem] w-[10rem] absolute top-[-15%] left-[5%] rotate-[-30deg]">
                     <img src="assets/image/shape/Vector5.svg"
-                        class="z-2 mix-blend-multiply  lg:w-[15rem] md:w-[10rem] w-[6rem] absolute top-[-5%] right-[10%]">
+                        class="z-2 mix-blend-multiply  lg:w-[8rem] md:w-[8rem] w-[5rem] absolute lg:top-[45%]  md:right-[5%] md:top-[25%] sm:top-[-25%]  sm:right-[10%] right-[25%] top-[-10%]">
                     <img src="assets/image/shape/Vector14.svg"
-                        class="z-2 mix-blend-multiply lg:w-[15rem] md:w-[8rem] w-[6rem] absolute top-[-25%] right-[10%]">
-                        <div class="flex flex-col absolute left-[50%] top-[50%] translate-[-50%] text-center gap-3">
-                            <h2 class="text-title text-black text-center z-2">Progetti</h2>
+                        class="z-2 mix-blend-multiply lg:right-[18%] lg:w-[10rem] md:w-[8rem] w-[5rem] absolute top-[-15%] right-[15%] rotate-[-60deg]">
+                        <div class="flex flex-col absolute left-[50%] top-[50%] translate-[-50%] w-full text-center gap-3 pr-[6rem] pl-[3rem]">
+                            <h2 class="text-title text-black text-center z-2 ">Progetti</h2>
                             <p class="text-normal">Le edizioni, i laboratori e le attività della Microstamperia</p>
                         </div>
                 </div>
 
                 
-                <div class="flex flex-col gap-4 px-[3rem] md:px-[7.5rem] ">
+                <div class="flex flex-col gap-4 pl-[3rem] pr-[6rem] md:px-[7.5rem] ">
                     <div class="mt-[30vh] w-full px-[7.5rem] bg-red-500">
                         sadas
                     </div>

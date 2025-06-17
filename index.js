@@ -422,14 +422,14 @@ function calculateVisibleItems(length) {
       return 2;
     if(length<5)
       return 2;*/
-    return 1; //return 1 ovvero il numero di libri visibili
+    return 3; //return 1 ovvero il numero di libri visibili
 }
 
 function buildEffect(items, spacing) {
     let
         cardsVisible = calculateVisibleItems(items.length), // atleast +1 card should be there to perform this transition for 3 there should be 4 cards
         cardDuration = (Math.ceil(cardsVisible / 2)) * spacing, //according to visible number of cards, we will decide in what progress cards should go 0-1 opacity or 1-0 opacity. e.g if 3 should be visible then - 0.0, 0.1 , 0.2 so at 0.2 it should complete 
-        startTime = items.length * spacing + cardDuration,
+        startTime = items.length * spacing + cardDuration, //100vh * 
         loopTime = startTime + (items.length * spacing) - spacing,
         rawSequence = gsap.timeline({ paused: true }),
         seamlessLoop = gsap.timeline({
@@ -443,7 +443,7 @@ function buildEffect(items, spacing) {
         i, index, item;
 
     // set initial state of items
-    gsap.set(items, { xPercent: 200, opacity: 0, scale: 0 });
+    gsap.set(items, { xPercent: 300, opacity: 0, scale: 0 });
     //total items should be double of length--it will start on 1st item of second instance of list
     //there should be extra cards visible on end of 2nd instance of list to make it look like it is in loop
     for (i = 0; i < (items.length * 2 + cardsVisible); i++) {
@@ -466,7 +466,7 @@ function buildEffect(items, spacing) {
     return seamlessLoop;
 }
 
-
+//sm >= 648px
 //md = >=768
 //lg >= 1024
 //xl>=1280px
