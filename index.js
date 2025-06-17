@@ -25,7 +25,7 @@ Draggable.create("#stampa", {
     }
 });
 
-
+/*
 gsap.registerPlugin(ScrollTrigger);
 
 let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
@@ -79,7 +79,7 @@ function calculateVisibleItems(length) {
     /*if(length>7)
       return 2;
     if(length<5)
-      return 2;*/
+      return 2;
     return 3; //return 1 ovvero il numero di libri visibili
 }
 
@@ -129,3 +129,4 @@ function buildEffect(items, spacing) {
 //lg >= 1024
 //xl>=1280px
 
+*/
