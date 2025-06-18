@@ -30,6 +30,7 @@
       @layer base {
         html {
             font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
         }
 
         /** 
@@ -167,8 +168,8 @@
             line-height: 100%; /* 4rem */
             font-style: normal;
         }
-        .text-nav{
-            font-size: 1.5rem;
+        .text-nav{ 
+            font-size: 1rem;
             font-family: "bidan", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -271,20 +272,21 @@
 
 <body class=" box-border w-full h-[200vh] relative bg-[#f5f5f5]">
     <nav
-        class="z-100 fixed bg-black h-screen w-[3rem] flex flex-col items-start justify-between py-[1.5rem] right-0 top-0">
-        <ul class="text-white text-nav flex flex-col items-start sel-stretch gap-4  transition">
-            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
-                style="writing-mode: sideways-lr;"><a href="#">chi siamo</a></li>
-            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
-                style="writing-mode: sideways-lr;"><a href="#">progetti</a></li>
-            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
-                style="writing-mode: sideways-lr;"><a href="#">stampa con noi</a></li>
-            <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
-                style="writing-mode: sideways-lr;"><a href="#">contattaci</a></li>
+        class="z-100 fixed bg-black h-screen w-[3rem] flex flex-col items-start justify-between py-[1.5rem] right-0 top-0 gap-8">
+        <ul
+            class="text-white text-nav flex flex-col justify-center items-center sel-stretch md:gap-4 gap-2  w-full transition">
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch"
+                style="writing-mode: sideways-lr;"><a href="#about">chi siamo</a></li>
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch"
+                style="writing-mode: sideways-lr;"><a href="#libri">stampa con noi</a></li>
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch"
+                style="writing-mode: sideways-lr;"><a href="#progetti">progetti</a></li>
+            <li class="whitespace-nowrap flex justify-center items-center self-stretch"
+                style="writing-mode: sideways-lr;"><a href="#info">contattaci</a></li>
         </ul>
         <ul class="w-full flex flex-col gap-2 justify-center items-center text-white">
-            <li><a href="#"><img src="assets/image/icon/instagram.svg"></a></li>
-            <li><a href="#"><img src="assets/image/icon/youtube.svg"></a></li>
+            <li><a href="https://www.microstamperia.org"><img src="assets/image/icon/instagram.svg"></a></li>
+            <li><a href="https://www.instagram.com/microstamperiaquarticciolo/"><img src="assets/image/icon/youtube.svg"></a></li>
         </ul>
     </nav>
     <main class="w-full flex flex-col gap-16 overflow-x-hidden">
@@ -355,7 +357,9 @@
                 ed
                 esplorare' le possibilità del <span class="text-description-medium">linguaggio grafico</span> e <span
                     class="text-description-medium">scritto</span>.</p>
-            <a class="bg-[#F15165] w-fit flex justify-center px-[1rem] py-[1.5rem] text-btn text-white">vieni a
+            <a
+                class="bg-[#F15165] hover:cursor-pointer hover:bg-[#00808D] transition w-fit flex justify-center px-[1rem] py-[1.5rem] text-btn text-white">vieni
+                a
                 trovarci</a>
         </section>
         <section class="mb-[15vh] ">
@@ -408,7 +412,7 @@
                     <img src="assets/image/shape/Vector24.svg"
                         class="mix-blend-multiply z-4 left-[16%] w-[8vw] top-[-65%] rotate-[-22deg] ">
                 </div>
-                <div
+                <div id="about"
                     class="flex px-[3rem] pr-[6rem] md:px-[7.5rem] py-[4rem] flex-col lg:flex-row md:items-end lg:gap-12 md:gap-16">
                     <div class="text-white flex flex-col gap-4 lg:w-1/2">
                         <h2 class="text-title ">Chi siamo</h2>
@@ -451,7 +455,8 @@
             <!--Pubblicazioni-->
             <section id="slider-container"
                 class="overflow-hidden relative min-h-screen bg-[#00808D] flex flex-col gap-4 pt-[15vh] box-content ">
-                <h2 class="text-title text-white text-center z-2 px-[3rem] pr-[6rem] break-all hypens-auto" lang="it">
+                <h2 id="libri" class="text-title text-white text-center z-2 px-[3rem] pr-[6rem] break-all hypens-auto"
+                    lang="it">
                     Pubblicazioni</h2>
                 <ul id="slider"
                     class="md:ml-[3rem] hover:cursor-grab  flex min-h-screen min-w-screen pr-[6rem] [&_li]:flex-shrink-0 [&_li]:min-w-[30vw] [&_li]:sm:w-[30vw] [&_li]:select-none   [&_li]:max-w-screen [&_li]:pr-[3rem] [&_li]:min-h-screen [&_li]:flex  [&_li]:justify-start [&_li]:items-center [&_li]:flex-col">
@@ -493,7 +498,7 @@
                 </ul>
             </section>
             <!--Progetti-->
-            <section class="flex flex-col min-h-screen  mt-0 pt-0  ">
+            <section class="flex flex-col min-h-screen  mt-0 pt-0 " id="progetti">
                 <div
                     class="bg-[#00808D] relative w-full md:h-[30vh] h-[25vh] bg-[url('assets/image/wave/wave.png')] bg-cover bg-top bg-no-repeat">
                     <img src="assets/image/shape/Vector18.svg"
@@ -569,7 +574,7 @@
                 </div>
             </section>
         </section>
-        <footer
+        <footer id="info"
             class="flex w-full pt-24 bg-black text-white pl-[3rem] flex-col md:px-[7.5rem] pr-[6rem] justify-between mt-[5vh]">
             <div class="flex w-full justify-between flex-col sm:flex-row gap-8 ">
                 <div class="flex flex-col ">
@@ -581,7 +586,7 @@
                         <input type="email" class="bg-white text-normal text-black px-4 py-2 focus:outline-none"
                             placeholder="Se vuoi scriverci">
                         <a
-                            class="bg-[#F15165] w-full flex justify-center px-[1rem] py-[1rem] text-btn text-white">Invia</a>
+                            class="bg-[#F15165] hover:cursor-pointer hover:bg-[#00808D] transition w-full flex justify-center px-[1rem] py-[1rem] text-btn text-white">Invia</a>
                     </form>
                 </div>
 
