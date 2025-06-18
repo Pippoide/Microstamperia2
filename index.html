@@ -249,18 +249,18 @@
 .animation-hand{
     animation: hand-dx 3s  ease-in-out infinite
 }
-.animation-bouncing{
-    animation: bouncing 1s ease-in-out 1 infinite forwards
+.animation-bouncing:hover{
+    animation: bouncing 1s ease-in-out 3 forwards;
 }
 @keyframes bouncing {
     0%{
-      transform: translateY(10%);
+      transform: translateY(0%);
     }
     50%{
-     transform: translateY(0%);
+     transform: translateY(-10%);
     }
     100%{
-   transform: translateY(10%);
+   transform: translateY(0%);
     }
 }
 
@@ -510,7 +510,7 @@
                             discussione offerta
                             dalla fondazione Michelle</p>
                     </li>
-                    <li class="book flex justify-center relative items-center w-64 h-64 hover:animation-bouncing">
+                    <li class="book flex justify-center relative items-center w-64 h-64 animation-bouncing">
                         <img class="pointer-events-none  object-contain rotate-[-90] md:mt-32 md:mr-32 mr-3 mt-3 forward"
                             loading="lazy" src="assets/image/gatto.svg">
                             <p class="text-normal text-white mt-6 md:hidden"><i>in corso...</i></p>
