@@ -49,15 +49,17 @@ Draggable.create("#stampa", {
 let slider = document.getElementById("slider")
 let drag
 let startX
-let  maxTranslate = ((document.querySelectorAll('.book').length) * document.querySelector('.book').offsetWidth) - window.innerWidth;
-maxTranslate=-1*maxTranslate
+let maxTranslate = ((document.querySelectorAll('.book').length) * document.querySelector('.book').offsetWidth) - window.innerWidth;
+//maxTranslate+=(16*3)
+maxTranslate = -1 * maxTranslate
 let prevTranslate = getTranslateX(slider)
 
 slider.addEventListener('mousedown', (e) => {
     drag = true;
     startX = e.clientX
     prevTranslate = getTranslateX(slider) || 0;
-
+    slider.classList.add("cursor-grabbing");
+    slider.classList.remove("hover:cursor-grab");
 });
 let movimento = 0
 
@@ -75,8 +77,13 @@ slider.addEventListener('mousemove', (e) => {
 
 slider.addEventListener('mouseup', (e) => {
     drag = false
+    slider.classList.remove("cursor-grabbing");
+    slider.classList.add("hover:cursor-grab");
 })
 slider.addEventListener('mouseleave', (e) => {
+    slider.classList.remove("cursor-grabbing");
+    slider.classList.add("hover:cursor-grab");
+
     drag = false
 })
 
@@ -87,28 +94,28 @@ function getTranslateX(element) {
 }
 
 slider.addEventListener('touchstart', (e) => {
-  isDragging = true;
-  startX = e.touches[0].clientX;
-  prevTranslate = getTranslateX(slider) || 0;
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    prevTranslate = getTranslateX(slider) || 0;
 }, { passive: true });
 
 // Touch move
 slider.addEventListener('touchmove', (e) => {
-  if (!isDragging) return;
+    if (!isDragging) return;
 
-  const delta = e.touches[0].clientX - startX;
-  currentTranslate = prevTranslate + delta;
+    const delta = e.touches[0].clientX - startX;
+    currentTranslate = prevTranslate + delta;
 
-  // limiti
-  if (currentTranslate > 0) currentTranslate = 0;
-  if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
+    // limiti
+    if (currentTranslate > 0) currentTranslate = 0;
+    if (currentTranslate < maxTranslate) currentTranslate = maxTranslate;
 
-  slider.style.transform = "translateX(" + currentTranslate + "px)";
+    slider.style.transform = "translateX(" + currentTranslate + "px)";
 }, { passive: true });
 
 // Touch end
 slider.addEventListener('touchend', () => {
-  isDragging = false;
+    isDragging = false;
 });
 
 /*

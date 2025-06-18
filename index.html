@@ -148,7 +148,8 @@
                 line-height: 90%; /* 1.35rem */
                 text-transform: uppercase;
             }
-           }
+
+        }
 
         @media screen and (max-width: 640px ){
             .text-description{
@@ -248,6 +249,10 @@
     animation: hand-dx 3s  ease-in-out infinite
 }
 
+.book{
+    text-align: center;
+}
+
 @keyframes hand-dx {
     0%{
         rotate:0deg
@@ -260,9 +265,6 @@
     }
 }
 
-.gallery, .cards li {
-  will-change: transform;
-}
 
     </style>
 </head>
@@ -270,7 +272,7 @@
 <body class=" box-border w-full h-[200vh] relative bg-[#f5f5f5]">
     <nav
         class="z-100 fixed bg-black h-screen w-[3rem] flex flex-col items-start justify-between py-[1.5rem] right-0 top-0">
-        <ul class="text-white text-nav flex flex-col items-start sel-stretch fgap-4  transition">
+        <ul class="text-white text-nav flex flex-col items-start sel-stretch gap-4  transition">
             <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
                 style="writing-mode: sideways-lr;"><a href="#">chi siamo</a></li>
             <li class="whitespace-nowrap flex justify-center items-center self-stretch" href="#"
@@ -384,7 +386,7 @@
                     class="left-[-10vw] top-[10%] z-2 pointer-events-none md:top-0 h-[45vw] animation-hand sm:h-[30vw] origin-bottom-left object-contain">
             </div>
         </section>
-        <section>
+        <section class="flex flex-col h-auto">
             <section class="section w-screen min-h-screen bg-[#00808D] mt-32">
                 <div
                     class="[&_img]:rounded-lg [&_img]:object-cover relative [&_img]:absolute w-screen md:h-[35vw] h-[25vw] rounded-3xl">
@@ -446,53 +448,52 @@
                     </div>
                 </div>
             </section>
-            <!--
-               <div id="" class="gallery bg-[#00808D] min-h-screen overflow-hidden  pl-[3rem] pr-[6rem] relative">
-                <h2 class="text-title text-white text-center absolute w-full  top-[10%] left-[-3rem] pl-[3rem]">stampa
-                    con&nbspnoi</h2>
-                <ul
-                    class=" cards  absolute top-0 left-[50%] translate-x-[-50%] w-[12rem] md:w-[24rem] h-[18rem] left-[50%] top-[50%] md:top-[40%] translate-[-50%] [&_li]:w-[12rem] [&_li]:hover:cursor-pointer   md:[&_li]:w-[24rem] [&_li]:h-[18rem] [&_li]:absolute [&_li]:top-0 [&_li]:-left-0 [&_li]:text-center [&_li]:flex [&_li]:flex-col [&_li]:items-center [&_li]:rounded-lg ">
-                    
-                    <li><img loading="lazy" src="assets/image/romanzoDelPratone1.png">
-                        <p class="text-normal text-white">Primo volume del Romanzo del Pratone, stampato in
+            <!--Pubblicazioni-->
+            <section id="slider-container"
+                class="overflow-hidden relative min-h-screen bg-[#00808D] flex flex-col gap-4 pt-[15vh] box-content ">
+                <h2 class="text-title text-white text-center z-2 px-[3rem] pr-[6rem] break-all hypens-auto" lang="it">
+                    Pubblicazioni</h2>
+                <ul id="slider"
+                    class="md:ml-[3rem] hover:cursor-grab  flex min-h-screen min-w-screen pr-[6rem] [&_li]:flex-shrink-0 [&_li]:min-w-[30vw] [&_li]:sm:w-[30vw] [&_li]:select-none   [&_li]:max-w-screen [&_li]:pr-[3rem] [&_li]:min-h-screen [&_li]:flex  [&_li]:justify-start [&_li]:items-center [&_li]:flex-col">
+
+                    <li class="book "><img
+                            class="w-full h-auto max-h-[calc(100vh-8rem)] object-contain pointer-events-none"
+                            loading="lazy" src="assets/image/romanzoDelPratone1.png">
+                        <p class="text-normal text-white px-[3rem] ">Primo volume del Romanzo del Pratone, stampato in
                             collaborazione con il quartiere di Torre Spaccata</p>
                     </li>
-                    <li><img loading="lazy" src="assets/image/romanzoDelPratone2.png">
-                        <p class="text-normal text-white">Secondo volume del Romanzo del Pratone, stampato in
+                    <li class="book "><img
+                            class="w-full h-auto max-h-[calc(100vh-8rem)] object-contain pointer-events-none"
+                            loading="lazy" src="assets/image/romanzoDelPratone2.png">
+                        <p class="text-normal text-white px-[3rem]">Secondo volume del Romanzo del Pratone, stampato in
                             collaborazione con il quartiere di Torre Spaccata</p>
 
                     </li>
-                    <li><img loading="lazy" src="assets/image/storiePartigiane.png">
-                        <p class="text-normal text-white">Raccolta di storie partigiane raccolte dagli abitanti del
+                    <li class="book"><img
+                            class="w-full h-auto max-h-[calc(100vh-8rem)] object-contain pointer-events-none"
+                            loading="lazy" src="assets/image/storiePartigiane.png">
+                        <p class="text-normal text-white px-[3rem]">Raccolta di storie partigiane raccolte dagli
+                            abitanti del
                             Quarticciolo</p>
                     </li>
-                    <li><img loading="lazy" src="assets/image/fanzine.png">
-                        <p class="text-normal text-white">Fanzine riguardo la città, realizzato tramite la risograph</p>
+                    <li class="book"><img
+                            class="w-full h-auto max-h-[calc(100vh-8rem)] object-contain pointer-events-none"
+                            loading="lazy" src="assets/image/fanzine.png">
+                        <p class="text-normal text-white px-[3rem]">Fanzine riguardo la città, realizzato tramite la
+                            risograph</p>
                     </li>
-                    <li><img  loading="lazy" src="assets/image/logicaFerocia.png">
-                        <p class="text-normal text-white">Brochure realizzata in prossimazione della discussione offerta
+                    <li class="book"><img
+                            class="w-full h-auto max-h-[calc(100vh-8rem)] object-contain pointer-events-none"
+                            loading="lazy" src="assets/image/logicaFerocia.png">
+                        <p class="text-normal text-white px-[3rem]">Brochure realizzata in prossimazione della
+                            discussione offerta
                             dalla fondazione Michelle</p>
                     </li>
+                    <li class=book></li>
                 </ul>
-            </div>
-            -->
-            <div id="slider-container"  class="overflow-hidden relative  h-screen">
-                <div class="flex " id="slider">
-                    <div class="book bg-red-500 flex-shrink-0  w-[100vw] h-screen">
-                        <p class="text-normal text-white">Primo volume del Romanzo del Pratone, stampato in
-                            collaborazione con il quartiere di Torre Spaccata</p>
-                    </div>
-                    <div class="book w-[100vw] flex-shrink-0 bg-green h-screen">
-                        <p class="text-normal text-white">Primo volume del Romanzo del Pratone, stampato in
-                            collaborazione con il quartiere di Torre Spaccata</p>
-                    </div>
-                </div>
-            </div>
+            </section>
             <!--Progetti-->
-            <div class="bg-[#00808D] h-[25vh] w-full">
-                <!--Per nascondere il lag del cls-->
-            </div>
-            <section class=" h-screen  mt-0 pt-0  ">
+            <section class="flex flex-col min-h-screen  mt-0 pt-0  ">
                 <div
                     class="bg-[#00808D] relative w-full md:h-[30vh] h-[25vh] bg-[url('assets/image/wave/wave.png')] bg-cover bg-top bg-no-repeat">
                     <img src="assets/image/shape/Vector18.svg"
@@ -502,15 +503,13 @@
                     <img src="assets/image/shape/Vector5.svg"
                         class="z-2 mix-blend-multiply  lg:w-[8rem] md:w-[8rem] w-[5rem] absolute lg:top-[45%]  md:right-[5%] md:top-[25%] sm:top-[-25%]  sm:right-[10%] right-[25%] top-[-10%]">
                     <img src="assets/image/shape/Vector14.svg"
-                        class="z-2 mix-blend-multiply lg:right-[18%] lg:w-[10rem] md:w-[8rem] w-[5rem] absolute top-[-15%] right-[15%] rotate-[-60deg]">
+                        class="z-2 mix-blend-multiply lg:right-[18%] lg:w-[10rem] md:w-[8rem] sm:w-[6rem] w-[3rem] absolute top-[-25%] sm:top-[-15%] right-[15%] rotate-[-60deg]">
                     <div
                         class="flex flex-col absolute left-[50%] top-[50%] translate-[-50%] w-full text-center gap-3 pr-[6rem] pl-[3rem]">
                         <h2 class="text-title text-black text-center z-2 ">Progetti</h2>
                         <p class="text-normal">Le edizioni, i laboratori e le attività della Microstamperia</p>
                     </div>
                 </div>
-
-
                 <div
                     class=" w-full grid md:grid-cols-3 md:gap-4 md:gap-y-16 gap-y-8 pl-[3rem] pr-[6rem] md:px-[7.5rem] mt-[10vh] ">
                     <div class="flex flex-col gap-2 w-full">
@@ -568,9 +567,40 @@
                             dalla Microstamperia Quarticciolo. Nasce con l’idea di inaugurare una collana…</p>
                     </div>
                 </div>
-
             </section>
         </section>
+        <footer
+            class="flex w-full pt-24 bg-black text-white pl-[3rem] flex-col md:px-[7.5rem] pr-[6rem] justify-between mt-[5vh]">
+            <div class="flex w-full justify-between flex-col sm:flex-row gap-8 ">
+                <div class="flex flex-col ">
+                    <h2 class="text-title md:text-[3rem] text-[2rem]">Ci vediamo<br> in Quartiere!</h2>
+                    <p class="lg:w-1/2 text-normal mt-4">La microstamperia è un punto libero di aggregazione chiunque
+                        voglia
+                        unirsi può farlo semplicemente presentandosi</p>
+                    <form class="flex flex-col lg:w-fit w-full mt-8 gap-4">
+                        <input type="email" class="bg-white text-normal text-black px-4 py-2 focus:outline-none"
+                            placeholder="Se vuoi scriverci">
+                        <a
+                            class="bg-[#F15165] w-full flex justify-center px-[1rem] py-[1rem] text-btn text-white">Invia</a>
+                    </form>
+                </div>
+
+                <iframe class=" h-full lg:aspect-square   rounded-xl border-12 border-[#F15165]" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"
+                    src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Via%20manfredonia%2023%2C%20Roma&t=&z=18&ie=UTF8&iwloc=B&output=embed"></iframe>
+            </div>
+
+            <div class="py-12 flex justify-between md:items-center items-start gap-4 flex-col md:flex-row">
+                <div class="flex md:gap-4 sm:gap-4 flex-col sm:flex-row">
+                    <p class="text-light">P.IVA 000783213133</p>
+                    <span class="text-light">www.microstamperia.org</span>
+                </div>
+
+                <span class="text-light">Designed & Develop with to much hate for my self, <a class="text-medium hover:underline
+                    " href="https://github.com/Pippoide/Microstamperia2">&ltFilippo Poma></a></span>
+            </div>
+
+        </footer>
     </main>
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/5.0.375/pdf.min.mjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -585,4 +615,4 @@
     <script src="index.js"></script>
 </body>
 
-</html> 
+</html>
